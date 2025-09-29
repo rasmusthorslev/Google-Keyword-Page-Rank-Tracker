@@ -1,0 +1,5 @@
+docker compose run --rm -v "$(pwd)/frontend:/frontend" frontend sh -c "npm install ..."
+docker compose up --watch --build 
+
+
+docker compose run --rm -v "$(pwd)/frontend:/frontend" frontend sh -c "npm install @mui/material @emotion/react @emotion/styled"
