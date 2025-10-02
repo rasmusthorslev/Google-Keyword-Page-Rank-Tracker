@@ -13,14 +13,9 @@ def setup_django_env():
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
         django.setup()
 
-Keyword = None
-RankResult = None
-
 def import_models():
-    global Keyword, RankResult
-    if Keyword is None or RankResult is None:
-        from scraper.models import Keyword as _K, RankResult as _R
-        Keyword, RankResult = _K, _R
+    from scraper.models import Keyword, RankResult
+    return Keyword, RankResult
 
 CHROME_ARGS = [
     "--disable-blink-features=AutomationControlled",
@@ -74,7 +69,7 @@ def extract_domain(url):
     return url[:end]
 
 async def scrape_all_keywords(user_agent):
-    import_models()
+    Keyword, RankResult = import_models()
     keywords = await sync_to_async(list)(Keyword.objects.all())
     for keyword_obj in keywords:
         print(f"Scraping for keyword: {keyword_obj.name}")
@@ -93,6 +88,5 @@ async def scrape_all_keywords(user_agent):
 
 if __name__ == "__main__":
     setup_django_env()
-    import_models()
     user_agent = "Mozilla/5.0 (Linux; Android 11; sdk_gphone_x86 Build/RSR1.240422.006; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36 GSA/11.13.8.21.x86"
     asyncio.run(scrape_all_keywords(user_agent))

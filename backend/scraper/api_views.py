@@ -15,4 +15,4 @@ class KeywordViewSet(viewsets.ReadOnlyModelViewSet):
 class RankResultViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = RankResult.objects.all()
     serializer_class = RankResultSerializer
-    filterset_fields = ['keyword', 'domain', 'position', 'checked_at']
+    filterset_fields = ['keyword', 'position', 'client', 'checked_at']
