@@ -1,5 +1,5 @@
-docker compose run --rm -v "$(pwd)/frontend:/frontend" frontend sh -c "npm install ..."
+docker compose run --rm -v "$(pwd)/frontend:/frontend" frontend sh -c "npm install @mui/x-data-grid"
 docker compose up --watch --build 
-
-
-docker compose run --rm -v "$(pwd)/frontend:/frontend" frontend sh -c "npm install @mui/material @emotion/react @emotion/styled"
+docker compose exec backend python manage.py ...
+docker compose exec backend python scraper/scraper.py
+docker compose exec backend python -m scraper.scraper

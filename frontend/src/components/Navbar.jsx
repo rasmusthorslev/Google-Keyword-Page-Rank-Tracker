@@ -25,7 +25,7 @@ export default function Navbar({children}) {
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
-            Clipped drawer
+            Google Keyword Page Rank Tracker
           </Typography>
         </Toolbar>
       </AppBar>
@@ -44,7 +44,7 @@ export default function Navbar({children}) {
                 <ListItemIcon>
                     <AutoGraphIcon />
                 </ListItemIcon>
-                <ListItemText primary={"Dashboard 1"} />
+                <ListItemText primary={"Keywords"} />
             </ListItemButton>
             </ListItem>
             <ListItem key={1} disablePadding>

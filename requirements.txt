@@ -1,3 +1,8 @@
 Django
 djangorestframework
 django-cors-headers
+django-filter
+psycopg2-binary
+asgiref>=3.4.0
+playwright
+playwright_stealth
