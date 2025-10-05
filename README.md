@@ -14,7 +14,7 @@ The system scrapes Google search results for keyword positions, stores them in a
 - Dockerized for consistent deployment
 
 **Frontend**
-- React + Material UI  
+- React in plain JavaScript + Material UI  
 - Communicates with Django REST API
 
 ---
