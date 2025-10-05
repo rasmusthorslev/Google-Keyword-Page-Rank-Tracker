@@ -1,4 +1,4 @@
-# Google Keyword Rank Tracker
+# Keyword Rank Tracker for Google Search
 
 A full-stack keyword rank tracking application built with **Playwright Stealth**, **Django**, **React**, and **PostgreSQL**, all running in **Docker**.  
 The system scrapes Google search results for keyword positions, stores them in a PostgreSQL database, and displays the results in a React dashboard.
